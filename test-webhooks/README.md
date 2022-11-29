@@ -58,3 +58,27 @@ if __name__ == "__main__":
 ```
 
 Para la url de prueba de webhook, se combinaría la ruta `/webhook` con la url de ngrok. La url del webhook resultante sería algo así como https://920c-81-35-24-51.eu.ngrok.io/webhook.
+
+## Registrar webhook de prueba en Conekta.
+
+```bash
+curl --location --request POST 'https://api.conekta.io/webhooks' \
+--header 'Accept: application/vnd.conekta-v2.0.0+json' \
+--header 'Accept-Language: es' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer key_KSdfawe...' \
+--data-raw '{
+	"url": "https://920c-81-35-24-51.eu.ngrok.io/webhook",
+	"synchronous": false
+}'
+```
+
+## Borrar webhook de prueba en Conekta
+
+```bash
+curl --location --request DELETE 'https://api.conekta.io/webhooks/617705ed0211a66aadbe7a9f' \
+--header 'Accept: application/vnd.conekta-v2.0.0+json' \
+--header 'Accept-Language: es' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer key_KSdfawe...' \
+```
