@@ -10,4 +10,4 @@ Guias y Ejemplos para integrar Conekta
         * [Link de Pago](pagos/online/payment-link)
     * [Suscripciones](pagos/subscriptions)
     * [Despues del Pago](pagos/after-payments)
-        * [Manejo de eventos de pago](pagos/after-payments//handling-payment-events)
+        * [Manejo de eventos de pago](pagos/after-payments/handling-payment-events)
