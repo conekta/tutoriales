@@ -6,8 +6,9 @@ app = FastAPI()
 
 @router.post("/webhook")
 async def webhook(request: Request):
-    body = await request.body()
-    return body
+    body = await request.json()
+    print(body)
+    return {"Status": "OK"}
 
 
 @router.get("/")
@@ -17,4 +18,4 @@ async def get_status():
 app.include_router(router)
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8081)

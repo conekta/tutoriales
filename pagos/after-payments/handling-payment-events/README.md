@@ -66,17 +66,92 @@ curl --location --request POST 'https://api.conekta.io/webhooks' \
 --header 'Accept: application/vnd.conekta-v2.0.0+json' \
 --header 'Accept-Language: es' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer key_KSdfawe...' \
+--header 'Authorization: Bearer key_KSdfawe..' \
 --data-raw '{
 	"url": "https://920c-81-35-24-51.eu.ngrok.io/webhook",
 	"synchronous": false
 }'
 ```
 
+```json
+{
+    "id":"63864a6b2e2ae0001841ef1c",
+    "synchronous":false,
+    "production_enabled":false,
+    "development_enabled":true
+    "url":"https://920c-81-35-24-51.eu.ngrok.io/webhook","status":"intermittent_errors",
+    "subscribed_events":[
+        "charge.created",
+        "charge.paid",
+        "charge.under_fraud_review",
+        "charge.fraudulent",
+        "charge.refunded",
+        "charge.preauthorized",
+        "charge.declined",
+        "charge.canceled",
+        "charge.reversed",
+        "charge.pending_confirmation",
+        "charge.expired",
+        "customer.created",
+        "customer.updated",
+        "customer.deleted",
+        "webhook.created",
+        "webhook.updated",
+        "webhook.deleted",
+        "charge.chargeback.created",
+        "charge.chargeback.updated",
+        "charge.chargeback.under_review",
+        "charge.chargeback.lost",
+        "charge.chargeback.won",
+        "payout.created",
+        "payout.retrying",
+        "payout.paid_out",
+        "payout.failed",
+        "plan.created",
+        "plan.updated",
+        "plan.deleted",
+        "subscription.created",
+        "subscription.paused",
+        "subscription.resumed",
+        "subscription.canceled",
+        "subscription.expired",
+        "subscription.updated",
+        "subscription.paid",
+        "subscription.payment_failed",
+        "payee.created",
+        "payee.updated",
+        "payee.deleted",
+        "payee.payout_method.created",
+        "payee.payout_method.updated",
+        "payee.payout_method.deleted",
+        "charge.score_updated",
+        "receipt.created",
+        "order.canceled",
+        "order.charged_back",
+        "order.created",
+        "order.expired",
+        "order.fraudulent",
+        "order.under_fraud_review",
+        "order.paid",
+        "order.partially_refunded",
+        "order.pending_payment",
+        "order.pre_authorized",
+        "order.refunded",
+        "order.updated",
+        "order.voided",
+        "order.declined",
+        "cashout.canceled",
+        "cashout.confirmed",
+        "webhook_ping",
+        "customer.payment_source.card.blocked"
+    ]
+}
+```
+
 ## Borrar webhook de prueba en Conekta
 
 ```bash
-curl --location --request DELETE 'https://api.conekta.io/webhooks/617705ed0211a66aadbe7a9f' \
+curl --location --request DELETE 'https://api.conekta.io/webhooks/63864a6b2e2ae0001841ef1c' \
 --header 'Accept: application/vnd.conekta-v2.0.0+json' \
 --header 'Accept-Language: es' \
 --header 'Content-Type: application/json' \
