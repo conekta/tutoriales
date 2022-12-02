@@ -168,7 +168,7 @@ Para finalizar, una vez confirmado el pago por parte de tu cliente, se generara 
 ```
 ## Capturar eventos del pago.
 
-Conekta permite automatizar acciones enviando eventos en respuesta a las transiciones que se producen en el flujo de pagos. Para recibir estos eventos y ejecutar acciones siga la guía de [webhooks](pagos/after-payments/handling-payment-events).
+Conekta permite automatizar acciones enviando eventos en respuesta a las transiciones que se producen en el flujo de pagos. Para recibir estos eventos y ejecutar acciones siga la guía de [webhooks](payments/after-payments/handling-payment-events).
 
 Se recomienda capturar los siguientes eventos cuando cobre pagos con el checkout:
 
