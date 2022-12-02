@@ -10,19 +10,19 @@ sequenceDiagram
 	participant Server
 	participant Conekta
 	
-	Customer->>Frontend: Ir a pagina de pago
-	Frontend->>Backend: Enviar datos de la Orden
-	Backend->>Conekta: Crear la Orden
+	Customer->>Client: Ir a pagina de pago
+	Client->>Server: Enviar datos de la Orden
+	Server->>Conekta: Crear la Orden
 	Conekta->>Conekta: Crear un Checkout
-	Conekta->>Backend: Retorna información del Checkout
-	Backend->>Frontend: Retorna el Checkout ID
-	Frontend->>Customer: Renderiza pagina de Checkout con el componente de pago embebido
-	Customer->>Frontend: Envia información en el formulario de pago
-	Frontend->>Conekta: Confirma Orden
+	Conekta->>Server: Retorna información del Checkout
+	Server->>Client: Retorna el Checkout ID
+	Client->>Customer: Renderiza pagina de Checkout con el componente de pago embebido
+	Customer->>Client: Envia información en el formulario de pago
+	Client->>Conekta: Confirma Orden
 	Conekta->>Conekta: Crea un Cargo
-	Conekta->>Frontend: Retorna el estado del pago
-	Frontend->>Customer: Renderiza pagina con el estado del pago
-	Conekta->>Backend: Envia eventos a webhook
+	Conekta->>Client: Retorna el estado del pago
+	Client->>Customer: Renderiza pagina con el estado del pago
+	Conekta->>Server: Envia eventos a webhook
 ```
 
 
