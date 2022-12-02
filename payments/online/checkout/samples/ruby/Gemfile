@@ -1,0 +1,8 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+gem "sinatra"
+gem "puma"
+gem "conekta", path: "/Users/boolean/projects/conekta/conekta-ruby"
+gem 'byebug'
