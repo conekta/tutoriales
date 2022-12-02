@@ -13,7 +13,7 @@ Agrega un boton de checkout en tu sitio web que ejecute un llamado al API de Con
 		<title>Buy cool new product</title>
 	</head>   
 	<body>
-		<form action="/create-checkout-session" method="POST">
+		<form action="/checkout" method="POST">
 			<button type="submit">Pagar con Conekta</button>
 		</form>   
 	</body>
