@@ -1,7 +1,11 @@
 import conekta
 import uvicorn
+from pathlib import Path
 from fastapi import FastAPI, Request, APIRouter
-from fastapi.responses import RedirectResponse
+from fastapi.templating import Jinja2Templates
+
+BASE_PATH = Path(__file__).resolve().parent
+templates = Jinja2Templates(directory=str(BASE_PATH / "public"))
 
 router = APIRouter()
 app = FastAPI()
@@ -27,7 +31,7 @@ async def create_checkout(request: Request):
             "line_items": [
                 {
                     "name": "Nintendo Switch OLED",
-                    "unit_price": 15000000,
+                    "unit_price": 9000000,
                     "quantity": 3
                 }
             ],
@@ -39,13 +43,13 @@ async def create_checkout(request: Request):
             },
 	    }
     )
-    url = order["checkout"]["url"]
-    return RedirectResponse(url)
+    checkout_id = order["checkout"]["id"]
+    return templates.TemplateResponse("index.html", {"request": request, "checkout_id": checkout_id})
 
 
 @router.get("/")
-async def get_status():
-    return {"Status": "OK",}
+async def return_ecommerce(request: Request):
+    return templates.TemplateResponse("button.html", {"request": request})
 
 app.include_router(router)
 
