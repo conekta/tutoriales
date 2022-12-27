@@ -36,10 +36,8 @@ async def create_checkout(request: Request):
                 }
             ],
             "checkout": {
-                "type": "HostedPayment",
-                "allowed_payment_methods": ["cash", "card", "bank_transfer"],
-                "success_url": "https://www.github.com/macuartin",
-                "failure_url": "https://www.twitter.com/macuartin",
+                "type": "Integration",
+                "allowed_payment_methods": ["cash", "card", "bank_transfer"]
             },
 	    }
     )
